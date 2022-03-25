@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Nginx常用模块三 | ONEMUE Docs</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="This is a Docs.">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.90a57e95.css" as="style"><link rel="preload" href="/docs/assets/js/app.27b283a1.js" as="script"><link rel="preload" href="/docs/assets/js/2.2e8f894a.js" as="script"><link rel="preload" href="/docs/assets/js/13.c0ae4be6.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.f6f629b0.js"><link rel="prefetch" href="/docs/assets/js/11.84b24849.js"><link rel="prefetch" href="/docs/assets/js/12.76af45bb.js"><link rel="prefetch" href="/docs/assets/js/14.4f6283b3.js"><link rel="prefetch" href="/docs/assets/js/15.002291f6.js"><link rel="prefetch" href="/docs/assets/js/16.5dfc5cc5.js"><link rel="prefetch" href="/docs/assets/js/17.14f17db6.js"><link rel="prefetch" href="/docs/assets/js/18.971e9caa.js"><link rel="prefetch" href="/docs/assets/js/19.889fb802.js"><link rel="prefetch" href="/docs/assets/js/20.d1be27fd.js"><link rel="prefetch" href="/docs/assets/js/21.83fd3971.js"><link rel="prefetch" href="/docs/assets/js/22.6bc785a8.js"><link rel="prefetch" href="/docs/assets/js/23.c9474e02.js"><link rel="prefetch" href="/docs/assets/js/24.054109cd.js"><link rel="prefetch" href="/docs/assets/js/25.c7f91c21.js"><link rel="prefetch" href="/docs/assets/js/3.ea118fbe.js"><link rel="prefetch" href="/docs/assets/js/4.6fbf7596.js"><link rel="prefetch" href="/docs/assets/js/5.f7d53cbe.js"><link rel="prefetch" href="/docs/assets/js/6.db4bfcd5.js"><link rel="prefetch" href="/docs/assets/js/7.2123913f.js"><link rel="prefetch" href="/docs/assets/js/8.c52818c0.js"><link rel="prefetch" href="/docs/assets/js/9.20e728b8.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.90a57e95.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">ONEMUE Docs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/docs/" aria-current="page" class="sidebar-link">内容构建中</a></li><li><a href="/docs/unicloud.html" class="sidebar-link">出现两年的 uniCloud</a></li><li><a href="/docs/han-shu-de-yi-xie-yan-jiu.html" class="sidebar-link">/han-shu-de-yi-xie-yan-jiu.html</a></li><li><a href="/docs/mian-shi.html" class="sidebar-link">面试汇总</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java Script</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Nginx</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>Nginx安装及配置</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading open"><span>Nginx模块管理</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/nginx/02_nginxmo-kuai-guan-li/nginxchang-yong-mo-kuai-01.html" class="sidebar-link">Nginx常用模块一</a></li><li><a href="/docs/nginx/02_nginxmo-kuai-guan-li/nginxchang-yong-mo-kuai-02.html" class="sidebar-link">Nginx常用模块二</a></li><li><a href="/docs/nginx/02_nginxmo-kuai-guan-li/nginxchang-yong-mo-kuai-03.html" aria-current="page" class="active sidebar-link">Nginx常用模块三</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/nginx/02_nginxmo-kuai-guan-li/nginxchang-yong-mo-kuai-03.html#_1、负载平衡模块-ngx-http-upstream-module" class="sidebar-link">1、负载平衡模块(ngxhttpupstream_module)</a></li><li class="sidebar-sub-header"><a href="/docs/nginx/02_nginxmo-kuai-guan-li/nginxchang-yong-mo-kuai-03.html#_2-重定向模块-ngx-http-rewrite-module" class="sidebar-link">2. 重定向模块（ngx http rewrite_ module）</a></li><li class="sidebar-sub-header"><a href="/docs/nginx/02_nginxmo-kuai-guan-li/nginxchang-yong-mo-kuai-03.html#_3-引用模块-ngx-http-referer-module" class="sidebar-link">3.引用模块（ngxhttpreferer_module）</a></li><li class="sidebar-sub-header"><a href="/docs/nginx/02_nginxmo-kuai-guan-li/nginxchang-yong-mo-kuai-03.html#_4-ngx-stream-core-module模块" class="sidebar-link">4. ngx streamcore_ module模块</a></li><li class="sidebar-sub-header"><a href="/docs/nginx/02_nginxmo-kuai-guan-li/nginxchang-yong-mo-kuai-03.html#_5-ngx-stream-proxy-module模块" class="sidebar-link">5. ngxstreamproxy_module模块</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>LNMP环境部署</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>Nginx优化管理</span> <span class="arrow right"></span></p> <!----></section></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>代码</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>收藏文章</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="nginx常用模块三"><a href="#nginx常用模块三" class="header-anchor">#</a> Nginx常用模块三</h1> <h2 id="_1、负载平衡模块-ngx-http-upstream-module"><a href="#_1、负载平衡模块-ngx-http-upstream-module" class="header-anchor">#</a> 1、负载平衡模块(ngx_http_upstream_module)</h2> <p>用于定义服务器组，这些服务器组可以被proxy_pass，fastcgi_pass，uwsgi_pass，scgi_pass,memcached_pass，grpc_pass指令引用。</p> <ul><li>upstream</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> upstream name</span> <span class="token punctuation">{</span> ... <span class="token punctuation">}</span>
+Default: -
+Context: http
+</code></pre></div><p>定义服务器组，服务器可以侦听不同的端口，另外，侦听TCP和Unix scoket的服务器可以混用。例如:</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">upstream</span> backend</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">server</span> backendl.example.com weight=5</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">server</span> 127.0.0.1:8080	max_fails=3 fail_timeout=30s</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">server</span> unix:/tmp/backend3</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">server</span> backupl.example.com backup</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>默认情况下，使用加权轮询平衡算法分配请求，上面的例子中，如果有7个请求，则backend1.example.com服务器会分配5个，第二个和第三个服务器各分配一个；如果在与服务器通信期间发生错误，则请求将传递到下一个服务器，依此类推，直到尝试所有运行中的服务器为止。如果无法从任何服务器获得成功的响应，客户端将得到backup1.example.com的响应。</p> <ul><li>server</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> server address [parameters]</span><span class="token punctuation">;</span> 
+Default: -
+Context: upstream
+</code></pre></div><p>定义服务器地址和其它参数,地址可以是IP地址或者域名加可选端口，也可以是使用&quot;unix' 开头的UNIX socket路径,端口如果没有指定，默认为80。一个可以解析为多个地址的域名一次性定义了多个服务器。</p> <p>能定义的参数有：</p> <ol><li>weight=number : 设置权重，默认是1</li> <li>max_conns=number : 限制与代理服务器同时进行活动连接的最大数目,默认为0,意思是不限制</li> <li>max_fails=number : 失败尝试最大次数；超出此处指定的次数时 server将被标记为不可用，默认为1</li> <li>fail_timeout=time : 后端服务器标记为不可用状态的连接超时时长，默认10s</li> <li>backup : 标记这个服务器为备份服务器</li> <li>down : 将服务器标记为永久不可用。配合ip_hash使用，实现灰度发布。</li></ol> <ul><li>ip_hash</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> ip_hash</span><span class="token punctuation">;</span>
+Default: -
+Context: upstream
+</code></pre></div><p>使用ip_hash的负载平衡方式。该方法确保来自同一客户端的请求总是传递到同一服务器，除非该服务器不可用。在后一种情况下，客户机请求将传递到另一个服务器。 如果其中一个服务器需要临时删除，则应使用down参数对其进行标记，以保留客户端IP地址的当前哈希。</p> <p>例如:</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">upstream</span> backend</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">ip_hash</span></span><span class="token punctuation">;</span>
+    
+	<span class="token directive"><span class="token keyword">server</span> backend1.example.com</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">server</span> backend2.example.com</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">server</span> backend3.example.com down</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">server</span> backend4.examp1e.com</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>least_conn</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> least_conn</span><span class="token punctuation">;</span>
+Default: -
+Context: upstream
+</code></pre></div><p>最少活跃连接调度算法，同时也要考虑权重，如果连接数相同，则使用加权轮询平衡算法。</p> <ul><li>least_time  （least  [liːst] 最少的）</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> least_time header | last_byte [inflight]</span><span class="token punctuation">;</span>
+Default: -
+Context: upstream
+This di rective appeared in version 1.7.10.
+</code></pre></div><p>以最小的平均响应时间和最少的活动连接数做为负载平衡算法。同时考虑服务器的权重。如果有多个这样的服务器，则使用加权循环平衡方法。商业版本才支持这个指令。</p> <ul><li>hash</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> hash key [consistent]</span> <span class="token punctuation">;</span>
+Default: -
+Context: upstream
+This di rective appeared in version 1.7.2.
+</code></pre></div><p>基于指定的key的hash算法来建立client-server映射表实现对请求的调度，此处的key可以是文本，变量或二者组合。</p> <p>作用：将请求分类,同-类请求将发往同一个upstream server，使用consistent参数，将使用ketama一致性hash算法， 适用于后端是Cache服务器 (如varnish) 时使用。</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">hash</span> <span class="token variable">$request_uri</span> consistent</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">hash</span> <span class="token variable">$remote_addr</span></span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>keepalive</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> keepalive connections</span><span class="token punctuation">;</span>
+Default: -
+Context: upstream
+This di rective appeared in version 1.1.4.
+</code></pre></div><p>为到上游服务器的连接激活缓存。connections参数为同上游服务器的空闲保持连接的最大数量。
+connections参数应该设置为足够小的数字，以便上游服务器可以处理新的传入连接。
+带keepalive的memcached上游配置示例:</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">upstream</span> memcached_backend</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">server</span> 127.0.0.1:11211</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">server</span> 10.0.0.2:11211</span><span class="token punctuation">;</span>
+    
+	<span class="token directive"><span class="token keyword">keepalive</span> <span class="token number">32</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+    ...
+	<span class="token directive"><span class="token keyword">location</span> /memcached/</span> <span class="token punctuation">{</span>
+		<span class="token directive"><span class="token keyword">set</span> <span class="token variable">$memcached_key</span> <span class="token variable">$uri</span></span><span class="token punctuation">;</span>
+		<span class="token directive"><span class="token keyword">memcached_pass</span> memcached_backend</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>对于HTTP , proxy_http_version指令应该设置到1.1,并且&quot;Connection&quot;头区域应该被清空。</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">upstream</span> http_backend</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">server</span> 127.0.0.1:8080</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">keepalive</span> <span class="token number">16</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+    ...
+        
+	<span class="token directive"><span class="token keyword">location</span> /http/</span> <span class="token punctuation">{</span>
+		<span class="token directive"><span class="token keyword">proxy_pass</span> http://http_backend</span><span class="token punctuation">;</span>
+		<span class="token directive"><span class="token keyword">proxy_http_version</span> 1.1</span><span class="token punctuation">;</span> 
+		<span class="token directive"><span class="token keyword">proxy_set_header</span> Connection <span class="token string">&quot;&quot;</span></span><span class="token punctuation">;</span>
+        ...
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>对于FastCGI服务器，fastcgi_keep_conn应该被设置on。</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">upstream</span> fastcgi_backend</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">server</span> 127.0.0.1:9000</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">keepalive</span> <span class="token number">8</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+    ...
+        
+	<span class="token directive"><span class="token keyword">location</span> /fastcgi/</span> <span class="token punctuation">{</span>
+		<span class="token directive"><span class="token keyword">fastcgi_pass</span> fastcgi_backend</span><span class="token punctuation">;</span>
+		<span class="token directive"><span class="token keyword">fastcgi_keep_conn</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span> 
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>注：负载平衡方法应该在keepalive指令前面配置; SCGI和uwsgi协议没有保持连接的概念。</p> <ul><li>health_check (nginx plus支持的健康检查机制)</li> <li>nginx_upstream_check_module (淘宝开发的第三方健康检查模块)</li></ul> <p>下载地址: https://www.keepalived.org/download.html</p> <p>配置案例：</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">upstream</span> backend</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">server</span> backend1.example.com	weight=5</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">server</span> backend2.example.com:8080</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">server</span> unix:/tmp/backend3</span><span class="token punctuation">;</span>
+    
+	<span class="token directive"><span class="token keyword">server</span> backup1.example.com:8080	backup</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">server</span> backup2.example.com:8080 backup</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">{</span>
+		<span class="token directive"><span class="token keyword">proxy_pass</span> http://backend</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="_2-重定向模块-ngx-http-rewrite-module"><a href="#_2-重定向模块-ngx-http-rewrite-module" class="header-anchor">#</a> 2. 重定向模块（ngx_ http_ rewrite_ module）</h2> <p>这个模块使用PCRE正则表达式更改请求的URI，返回重定向指令并有条件的选择配置。</p> <p>break，if，return，rewrite，set指令执行顺序如下:</p> <ul><li><p>这个模块的指令在server级别是顺序执行</p></li> <li><p>重复
+。基于请求的URI查找对应的一个location
+。在找到的location中，模块指令按顺序执行
+。如果请求的URl被重写，则循环重复,但不超过10次</p></li> <li><p>break</p></li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> break</span><span class="token punctuation">;</span>
+Default: -
+context: server, location, if
+</code></pre></div><p>停止处理当前的ngx-http-rewrite-module指令集。如果该指令是在location中，那么在这个location中，对请求的进一步处理将继续进行。</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">if</span> (<span class="token variable">$slow</span>)</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">1imit_rate</span> <span class="token number">10k</span></span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">break</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>if</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> if (condition)</span> <span class="token punctuation">{</span> ... <span class="token punctuation">}</span>
+Default: -
+context: server, location
+</code></pre></div><p>若条件判断为真，则执行花括号内的指令，并且将括号内的配置应用到请求上。if指令中的配置是从上一层配置中继承的。</p> <p>条件判断式的有如”下种类:</p> <ul><li>一个变量名。如果值为空或者0，则为flase</li> <li>比较字符串变量使用&quot;=&quot;和&quot;!=”</li> <li>测试一个变量是否与一个正则表达式匹配，正则表达式前使用&quot;~&quot;(区分大小写)或&quot;~* &quot;(不区分大小写)操作符，正则表达式能使用&quot;$1到$9&quot;变量，以便后面可以重复使用；不匹配，使用&quot;!~&quot;和&quot;!~*&quot;操作符，如果正则表达式中含有&quot;}&quot;或&quot;;&quot;符号，应使用单引号或双引号将正则表达式括起来。</li> <li>测试一个文件是否存在使用&quot;-f&quot;和&quot;!-f&quot;</li> <li>测试一个目录是否存在使用&quot;-d&quot;和&quot;!-d&quot;</li> <li>测试一个文件、目录、或符号链接文件是否存在，使用&quot;-e&quot;和&quot;!-e&quot;</li> <li>测试一个文件是否可执行使用&quot;-x&quot;和&quot;!-x&quot;</li></ul> <p>例如：</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">if</span> (<span class="token variable">$http_user_agent</span> ~ MSIE)</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">rewrite</span> ^(.*)$ /msie/<span class="token variable">$1</span> break</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token directive"><span class="token keyword">if</span> (<span class="token variable">$http_cookie</span> ~* <span class="token string">&quot;id=([^;]+)(?:;|$)&quot;</span>)</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">set</span> <span class="token variable">$id</span> <span class="token variable">$1</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token directive"><span class="token keyword">if</span> (<span class="token variable">$request_method</span> = POST)</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">return</span> <span class="token number">405</span></span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+
+<span class="token directive"><span class="token keyword">if</span> (<span class="token variable">$slow</span>)</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">1imit_rate</span> <span class="token number">10k</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token directive"><span class="token keyword">if</span> (<span class="token variable">$invalid_referer</span>)</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">return</span> <span class="token number">403</span></span> <span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>$invalid_referer是一个内建变量，由valid_referers指令进行设置</p> <ul><li>return</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span>	 return code [text]</span><span class="token punctuation">;</span>
+		<span class="token directive"><span class="token keyword">return</span> code URL</span><span class="token punctuation">;</span>
+		<span class="token directive"><span class="token keyword">return</span> URL</span><span class="token punctuation">;</span>
+Default: -
+Context: server, location, if
+</code></pre></div><p>停止处理，返回状态码code给客户端。返回非标准码444将关闭该连接,而且不发送响应header。</p> <ul><li>rewrite  （replacement [rɪˈpleɪsmənt]  替换）</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> rewrite regex replacement [flag]</span> <span class="token punctuation">;</span>
+Default: -
+Context: server, location, if
+</code></pre></div><p>如果regex匹配了一个请求的URI， 该URI被替换为replacement。rewrite 指令在配置文件中按照出现的顺序执行。可使用flag中止进一步的处理。如果replacement以&quot;http://&quot;,&quot;https://&quot;为起始的字符串，将中止处理，并返回重定向指令给客户端。
+flag参数的值可以为:</p> <p>last停止当前ngx_http_rewrite_module模块指令集的处理，并为修改后的URl寻找新的匹配的location
+break停止当前ngx_http_rewrite_module模块指令集的处理，与break指令作用相同
+redirect 返回302代码的临时重定向，当replacement不以&quot;http://&quot;,&quot;https://&quot;为起始的字符串时使用
+permanent 返回301代码的永久重定向</p> <p>例子：</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">if</span> (<span class="token variable">$http_user_agent</span> ~ MSIE)</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">rewrite</span> ^(.*)$ /msie/<span class="token variable">$1</span> break</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+
+<span class="token directive"><span class="token keyword">if</span> (<span class="token variable">$http_cookie</span> ~* <span class="token string">&quot;id=([^;]+)(?:;|$)&quot;</span>)</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">set</span> <span class="token variable">$id</span> <span class="token variable">$1</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token directive"><span class="token keyword">if</span> (<span class="token variable">$request_method</span> = POST)</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">return</span> <span class="token number">405</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token directive"><span class="token keyword">if</span> (<span class="token variable">$slow</span>)</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">1imit_rate</span> <span class="token number">10k</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token directive"><span class="token keyword">if</span> (<span class="token variable">$invalid_referer</span>)</span> <span class="token punctuation">{</span>
+<span class="token directive"><span class="token keyword">return</span> <span class="token number">403</span></span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+</code></pre></div><p>$invalid_referer是一个内建变量，由valid_referers指令进行设置</p> <ul><li>return</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span>	 return code [text]</span> <span class="token punctuation">;</span>
+		<span class="token directive"><span class="token keyword">return</span> code URL</span><span class="token punctuation">;</span>
+		<span class="token directive"><span class="token keyword">return</span> URL</span><span class="token punctuation">;</span>
+Default: -
+Context: server, location, if
+</code></pre></div><p>停止处理，返回状态码code给客户端。返回非标准码444将关闭该连接，而且不发送响应header。</p> <ul><li>rewrite</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> rewrite regex replacement [flag]</span><span class="token punctuation">;</span>
+Default: -
+Context: server, location, if
+</code></pre></div><p>如果regex匹配了一个请求的URI，该URI被替换为replacement。rewrite 指令在配置文件中按照出现的顺序执行。可使用flag中止进一步的处理。如果replacement以&quot;http://&quot;,&quot;https/”为起始的字符串,将中止处理,并返回重定向指令给客户端。</p> <p>flag参数的值可以为:</p> <ul><li>last停止当前ngx_http_rewrite_module模块指令集的处理，并为修改后的URI寻找新的匹配的location</li> <li>break停止当前ngx_http_rewrite_module模块指令集的处理，与break指令作用相同</li> <li>redirect返回302代码的临时重定向,当replacement不以htp://*,&quot;https://&quot;为起始的字符串时使用</li> <li>permanent返回301代码的永久重定向</li></ul> <p>例子：</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+    ...
+	<span class="token directive"><span class="token keyword">rewrite</span> ^(/download/. *)/media/(.*)\..*$ <span class="token variable">$1</span>/mp3/<span class="token variable">$2</span>.mp3 last</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">rewrite</span> ^(/download/. *)/audio/(.*)\..*$ <span class="token variable">$1</span>/mp3/<span class="token variable">$2</span>.ra last</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">return</span> <span class="token number">403</span></span><span class="token punctuation">;</span>
+    ...
+<span class="token punctuation">}</span>
+</code></pre></div><p>但如果这些指令被放入&quot;/download/&quot; location区块中，应将last flag替换为break，否则nginx会不断循环，达到10次后，返回500 error</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">location</span> /download/</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">rewrite</span> ^(/download/.*)/media/(.*)\..*$ <span class="token variable">$l</span>/mp3/<span class="token variable">$2</span>.mp3 break</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">rewrite</span> ^(/download/.*)/audio/(.*)\..*$ <span class="token variable">$l</span>/mp3/<span class="token variable">$2</span>.ra break</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">return</span> <span class="token number">403</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>如果replacement包含请求参数，原来的请求参数将被追加在后面。如果不希望追加原来的请求参数，可在replacement字符串的末尾添加一个&quot;?”符号，例如:</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">rewrite</span> ^/users/(.*)$ /show?user=<span class="token variable">$l</span>? last</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>rewrite_log</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> rewrite_log <span class="token boolean">on</span> | <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> rewrite_log <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+context: http, server, location, if
+</code></pre></div><p>是否开启ngx_http_rewrite_module模块的日志，如果开启，该模块的日志将被记录进入error_log中，日志的级别为notice （ [ˈnoʊtɪs]  通知）</p> <ul><li>set</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> set <span class="token variable">$variable</span> value</span><span class="token punctuation">;</span>
+Default: -
+Context: server, location, if
+</code></pre></div><p>为变量赋值。value可包含：文本，变量，或文本和变量的组合</p> <h2 id="_3-引用模块-ngx-http-referer-module"><a href="#_3-引用模块-ngx-http-referer-module" class="header-anchor">#</a> 3.引用模块（ngx_http_referer_module）</h2> <p>用于阻止&quot;referer”头字段中具有无效值的请求访问站点。</p> <ul><li>valid_refers</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> valid_referers none | blocked | server_names | string ...</span><span class="token punctuation">;</span>
+Default: -
+Context: server, location
+</code></pre></div><p>定义referer首部的合法可用值，不能匹配的将是非法值。指定&quot;referer”请求头字段值，该值将导致内置变量$invalid_ referer为空字符串。否则，变量值为&quot;1&quot;。搜索匹配项不区分大小写。参数如下:</p> <ul><li>none: 请求报文首部没有referer首部</li> <li>blocked: &quot;referer “字段存在于请求头中，但其值已被防火墙或代理服务器删除；这些值是不以&quot;http://&quot;或&quot;https://&quot;开头的字符串;</li> <li>server_names: &quot;referer&quot;请求头字段包含一个服务器名称；</li> <li>arbitrary string: 任意字符串，定义服务器名称和一个可选的URl前缀，开头和结尾可以使用 &quot;* &quot;；检查时，忽略&quot;referer”字段的服务器端口。（arbitrary [ˈɑːrbɪtreri]  任意的）</li> <li>regular expression: 正则表达式匹配到的字符串。第一个符号应该是&quot;~&quot;。 应该注意,表达式将与&quot;http://&quot;或&quot;https://&quot;之 后开始的文本匹配。（regular  [ˈreɡjələr] 有规律的 expression [ɪkˈspreʃn]）</li></ul> <p>配置举例：</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">valid_referers</span> none blocked server_names
+			*.example.com example.* www.example.org/galleries/
+			~\.goog1e\.</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">if</span> (<span class="token variable">$invalid_referer</span>)</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">return</span> <span class="token number">403</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="_4-ngx-stream-core-module模块"><a href="#_4-ngx-stream-core-module模块" class="header-anchor">#</a> 4. ngx_ stream_core_ module模块</h2> <p>基于tcp或udp的服务连接的反向代理，即工作于传输层的反向代理或调度器。此模块从1.9.0版开始可用。这个模块在默认情况下不会构建，应该使用--with-stream配置参数来启用它。</p> <ul><li>listen</li></ul> <p>设置服务器接收的地址和端口组合，也可以只设置端口</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> listen address:port [ssl] [udp] [proxy_protoco1] [backlog=number][rcvbuf=size] [sndbuf=size] [bind]
+		[ipv6only=on | off] [reuseport] [so_ keepalive=on|off| [keepid1e]: 
+[keepintvl]:[keepcnt]]</span><span class="token punctuation">;</span>
+Default: -
+Context: server
+</code></pre></div><ul><li>例如：</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">listen</span> 127.0.0.1:12345</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">1isten</span> *:12345</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">listen</span> <span class="token number">12345</span></span><span class="token punctuation">;</span>	<span class="token comment"># same as *:12345</span>
+<span class="token directive"><span class="token keyword">listen</span> localhost:12345</span><span class="token punctuation">;</span>
+
+<span class="token directive"><span class="token keyword">listen</span> [::1] :12345</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">listen</span> [::]:12345</span><span class="token punctuation">;</span>
+
+<span class="token directive"><span class="token keyword">listen</span> unix:/var/run/nginx.sock</span><span class="token punctuation">;</span>
+
+<span class="token directive"><span class="token keyword">listen</span> 127.0.0.1:12345-12399</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">listen</span> 12345-12399</span><span class="token punctuation">;</span>
+</code></pre></div><p>配置案例：</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">worker_processes</span> auto</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">error_log</span> /var/1og/nginx/error.log info</span><span class="token punctuation">;</span>
+
+<span class="token directive"><span class="token keyword">events</span></span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">worker_connections</span> <span class="token number">1024</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token directive"><span class="token keyword">stream</span></span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">upstream</span> backend</span> <span class="token punctuation">{</span>
+		<span class="token directive"><span class="token keyword">hash</span> <span class="token variable">$remote_addr</span> consistent</span><span class="token punctuation">;</span>
+        
+		<span class="token directive"><span class="token keyword">server</span> backendl.example.com:12345 weight=5</span><span class="token punctuation">;</span>
+		<span class="token directive"><span class="token keyword">server</span> 127.0.0.1:12345		max_fails=3 fails_timeout=30s</span><span class="token punctuation">;</span>
+		<span class="token directive"><span class="token keyword">server</span> unix:/tmp/backend3</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token directive"><span class="token keyword">upstream</span> dns</span> <span class="token punctuation">{</span>
+            <span class="token directive"><span class="token keyword">server</span> 192.168.0.1:53535</span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">server</span> dns.example.com:53</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+
+            <span class="token directive"><span class="token keyword">listen</span> <span class="token number">12345</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_connect_timeout</span> <span class="token number">1s</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_timeout</span> <span class="token number">3s</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_pass</span> backend</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment"># reuseport 重用端口 同一个端口可以有多个socket同时进行监听</span>
+    
+    <span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+            <span class="token directive"><span class="token keyword">listen</span> 127.0.0.1:53 udp reuseport</span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_timeout</span> <span class="token number">20s</span></span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_pass</span> dns</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+            <span class="token directive"><span class="token keyword">listen</span> [::1]:12345</span><span class="token punctuation">;</span>
+            <span class="token directive"><span class="token keyword">proxy_pass</span> unix:/tmp/stream.socket</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="_5-ngx-stream-proxy-module模块"><a href="#_5-ngx-stream-proxy-module模块" class="header-anchor">#</a> 5. ngx_stream_proxy_module模块</h2> <p>允许代理TCP/UDP和UNIX socket数据流</p> <ul><li>proxy_pass</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> proxy_pass address</span><span class="token punctuation">;</span>
+Default: -
+Context: server
+</code></pre></div><p>设置被代理服务器的地址。可以是域名或IP地址和一个端口，或者UNIX socket路径</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">proxy-pass</span> localhost:12345</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">proxy_pass</span> unix:/tmp/stream.socket</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>proxy_timeout</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> proxy_timeout timeout</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> proxy_timeout <span class="token number">10m</span></span><span class="token punctuation">;</span>
+Context: stream, server
+</code></pre></div><p>设置客户端或代理服务器连接上两个连续读或写操作之间的超时时间。如果在这段时间内没有数据传输，则连接将关闭。</p> <ul><li>proxy_connect_timeout</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span>
+proxy_connect_timeout time</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> proxy_connect_timeout <span class="token number">60s</span></span><span class="token punctuation">;</span>
+Context: stream, server
+</code></pre></div><p>定义与被代理服务器建立连接的超时时间</p> <ul><li>proxy_bind</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> proxy_bind address [transparent] | <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+Default: -
+context: stream, server
+This di rective appeared in version 1.9.2.
+</code></pre></div><p>指定到被代理服务器数据包的源IP地址。参数可以包含变量，off表示取消从上一级的继承配置，以便让系统自动分配本地的地址。</p> <p>transparent（[trænsˈpærənt]透明的）启用透明代理</p> <p>透明代理的意思是客户端根本不需要知道有代理服务器的存在。既然透明代理是感知不了代理的存在，那么非透明代理就是可以感知到代理的存在了，最简单的方式就是你要去访问网站A，在正常情况下，网站A看到访问是来自于你的终端的（比如源IP地址是你自己浏览器的），假如你的终端是通过代理来访问网站A的，在普通非透明代理情况下，网站A看到请求是来自于你的代理IP而看不到你这个终端，在透明代理情况下，网站A感知不到你和它之间中间有一层代理，网站A看到的请求是来自于你的终端地址。</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">proxy_bind</span> <span class="token variable">$remote_addr</span> transparent</span><span class="token punctuation">;</span>
+</code></pre></div><p>配置案例</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">listen</span> 127.0.0.1:12345</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">proxy_pass</span> 127.0.0.1:8080</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+
+<span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">listen</span> <span class="token number">12345</span></span><span class="token punctuation">;</span> 
+	<span class="token directive"><span class="token keyword">proxy_connect_timeout</span> <span class="token number">1s</span></span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">proxy_timeout</span> <span class="token number">1m</span></span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">proxy_pass</span> example.com:12345</span> <span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">listen</span> <span class="token number">53</span> udp reuseport</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">proxy_timeout</span> <span class="token number">20s</span></span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">proxy_pass</span> dns.xample.com:53</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">listen</span> [::1]:12345</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">proxy_pass</span> unix:/tmp/stream.socket</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>附录：PCRE正则表达式语法</strong></p> <table><thead><tr><th>字符</th> <th>描述</th></tr></thead> <tbody><tr><td>\</td> <td>将下一个字符标记为一个特殊字符，或一个原义字符，或一个向后引用，或一个八进制转义符。例如，”\n”匹配一个换行符。</td></tr> <tr><td>^</td> <td>匹配输入字符串的开始位置。</td></tr> <tr><td>$</td> <td>匹配输入字符串的结束位置。</td></tr> <tr><td>*</td> <td>匹配前面的子表达式零次或多次，等价于{0,}</td></tr> <tr><td>+</td> <td>匹配前面的子表达式一次或多次，等价于{1,}</td></tr> <tr><td>?</td> <td>匹配前面的子表达式零次或一次，等价于{0,1}</td></tr> <tr><td>?</td> <td>当该字符紧跟在任何一个其他限制符(*,+,?,{n},{n,},{n,m})后面时，匹配模式是非贪婪的。非贪婪模式尽可能少地匹配所搜索的字符串，而默认的贪婪模式则尽可能多地匹配所搜索的字符串。例如，对于字符串”oooo”,”o+?”将匹配单个”o”,而”o+”将匹配所有的”o”。</td></tr> <tr><td>{n}</td> <td>N是一个非负整数，匹配确定的n次。</td></tr> <tr><td>{n,}</td> <td>N是一个非负整数，至少匹配n次。</td></tr> <tr><td>{n,m}</td> <td>M和n均为非负整数，其中n&lt;=m，最少匹配n次且最多匹配m次。</td></tr> <tr><td>.</td> <td>匹配除”\n”之外的任何单个字符。要匹配包括”\n”在内的任何字符，请使用像”[.\n]”的模式</td></tr> <tr><td>(pattern)</td> <td>匹配pattern并获取这一匹配。</td></tr> <tr><td>(?:pattern)</td> <td>匹配pattern但不获取匹配结果。这在使用“或”字符(|)来组合一个模式的各个部分是很有用的。例如:’industry|industries’就可以用’industr(?:y|ies)’代替</td></tr> <tr><td>(?=pattern)</td> <td>正向预查，在任何匹配pattern的字符串开始处匹配查找字符串。例如：”Windows(?=95|98|NT|2000)”能匹配”Windows2000”中的”Windows”，但不能匹配”Windows3.1”中的”Windows”。</td></tr> <tr><td>(?!pattern)</td> <td>负向预查，在任何不匹配pattern的字符串开始处匹配查找字符串。例如：”Windows(?!95|98|NT|2000)”能匹配”Windows3.1”中的”Windows”，但不能匹配”Windows2000”中的”Windows”。</td></tr> <tr><td>x|y</td> <td>匹配x或y。</td></tr> <tr><td>[xyz]</td> <td>字符集合，匹配所包含的任何一个字符。</td></tr> <tr><td>[^xyz]</td> <td>负值字符集合，匹配未包含的任意字符。</td></tr> <tr><td>[a-z]</td> <td>字符范围，匹配指定范围内的任意字符。</td></tr> <tr><td>[^a-z]</td> <td>负值字符范围，匹配任何不在指定范围内的任意字符。</td></tr> <tr><td>\b</td> <td>匹配一个单词边界，也就是单词和空格间的位置。</td></tr> <tr><td>\B</td> <td>匹配非单词边界。</td></tr> <tr><td>\cx</td> <td>匹配由x指明的控制字符。X的值必须为A-Z或a-z之间</td></tr> <tr><td>\d</td> <td>匹配一个数字字符。等价于[0-9]</td></tr> <tr><td>\D</td> <td>匹配一个非数字字符。等价于[^0-9]</td></tr> <tr><td>\f</td> <td>匹配一个换页符。等价于\x0c和\cL</td></tr> <tr><td>\n</td> <td>匹配一个换行符。等价于\x0a和\cJ</td></tr> <tr><td>\r</td> <td>匹配一个回车符。等价于\x0d和\cM</td></tr> <tr><td>\s</td> <td>匹配任何空白字符，包括空格、制表符、换页符等。</td></tr> <tr><td>\S</td> <td>匹配任何非空白符。</td></tr> <tr><td>\t</td> <td>匹配一个制表符</td></tr> <tr><td>\w</td> <td>匹配包括下划线的任何单词字符。等价于[a-zA-Z0-9_]</td></tr> <tr><td>\W</td> <td>匹配任何非单词字符。</td></tr> <tr><td>\xn</td> <td>匹配n，其中n为十六进制转义值。例如”\x41”匹配”A”。</td></tr> <tr><td>\num</td> <td>匹配num，其中num是一个正整数。对所获取的匹配的引用。例如：”(.)\1”</td></tr></tbody></table></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docs/nginx/02_nginxmo-kuai-guan-li/nginxchang-yong-mo-kuai-02.html" class="prev">
+        Nginx常用模块二
+      </a></span> <span class="next"><a href="/docs/nginx/03_lnmphuan-jing-bu-shu/1.nginxwang-zhan-fu-wu.html">
+        Nginx网站服务
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/docs/assets/js/app.27b283a1.js" defer></script><script src="/docs/assets/js/2.2e8f894a.js" defer></script><script src="/docs/assets/js/13.c0ae4be6.js" defer></script>
+  </body>
+</html>

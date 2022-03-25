@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Nginx常用模块二 | ONEMUE Docs</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="This is a Docs.">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.90a57e95.css" as="style"><link rel="preload" href="/docs/assets/js/app.27b283a1.js" as="script"><link rel="preload" href="/docs/assets/js/2.2e8f894a.js" as="script"><link rel="preload" href="/docs/assets/js/12.76af45bb.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.f6f629b0.js"><link rel="prefetch" href="/docs/assets/js/11.84b24849.js"><link rel="prefetch" href="/docs/assets/js/13.c0ae4be6.js"><link rel="prefetch" href="/docs/assets/js/14.4f6283b3.js"><link rel="prefetch" href="/docs/assets/js/15.002291f6.js"><link rel="prefetch" href="/docs/assets/js/16.5dfc5cc5.js"><link rel="prefetch" href="/docs/assets/js/17.14f17db6.js"><link rel="prefetch" href="/docs/assets/js/18.971e9caa.js"><link rel="prefetch" href="/docs/assets/js/19.889fb802.js"><link rel="prefetch" href="/docs/assets/js/20.d1be27fd.js"><link rel="prefetch" href="/docs/assets/js/21.83fd3971.js"><link rel="prefetch" href="/docs/assets/js/22.6bc785a8.js"><link rel="prefetch" href="/docs/assets/js/23.c9474e02.js"><link rel="prefetch" href="/docs/assets/js/24.054109cd.js"><link rel="prefetch" href="/docs/assets/js/25.c7f91c21.js"><link rel="prefetch" href="/docs/assets/js/3.ea118fbe.js"><link rel="prefetch" href="/docs/assets/js/4.6fbf7596.js"><link rel="prefetch" href="/docs/assets/js/5.f7d53cbe.js"><link rel="prefetch" href="/docs/assets/js/6.db4bfcd5.js"><link rel="prefetch" href="/docs/assets/js/7.2123913f.js"><link rel="prefetch" href="/docs/assets/js/8.c52818c0.js"><link rel="prefetch" href="/docs/assets/js/9.20e728b8.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.90a57e95.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">ONEMUE Docs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/docs/" aria-current="page" class="sidebar-link">内容构建中</a></li><li><a href="/docs/unicloud.html" class="sidebar-link">出现两年的 uniCloud</a></li><li><a href="/docs/han-shu-de-yi-xie-yan-jiu.html" class="sidebar-link">/han-shu-de-yi-xie-yan-jiu.html</a></li><li><a href="/docs/mian-shi.html" class="sidebar-link">面试汇总</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java Script</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Nginx</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>Nginx安装及配置</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading open"><span>Nginx模块管理</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/nginx/02_nginxmo-kuai-guan-li/nginxchang-yong-mo-kuai-01.html" class="sidebar-link">Nginx常用模块一</a></li><li><a href="/docs/nginx/02_nginxmo-kuai-guan-li/nginxchang-yong-mo-kuai-02.html" aria-current="page" class="active sidebar-link">Nginx常用模块二</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/nginx/02_nginxmo-kuai-guan-li/nginxchang-yong-mo-kuai-02.html#_1、日志记录模块-ngx-http-log-module" class="sidebar-link">1、日志记录模块（ngxhttplog_module）</a></li><li class="sidebar-sub-header"><a href="/docs/nginx/02_nginxmo-kuai-guan-li/nginxchang-yong-mo-kuai-02.html#_2、压缩相关配置-ngx-http-gzip-module" class="sidebar-link">2、压缩相关配置（ngxhttpgzip_module）</a></li><li class="sidebar-sub-header"><a href="/docs/nginx/02_nginxmo-kuai-guan-li/nginxchang-yong-mo-kuai-02.html#_3、http模块-ngx-http-ssl-module" class="sidebar-link">3、HTTP模块（ngxhttpssl_module）</a></li><li class="sidebar-sub-header"><a href="/docs/nginx/02_nginxmo-kuai-guan-li/nginxchang-yong-mo-kuai-02.html#_4、反向代理模块-ngx-http-proxy-module" class="sidebar-link">4、反向代理模块(ngxhttp proxy_ module)</a></li><li class="sidebar-sub-header"><a href="/docs/nginx/02_nginxmo-kuai-guan-li/nginxchang-yong-mo-kuai-02.html#_5、php相关模块-ngx-http-fastcgi-module" class="sidebar-link">5、php相关模块(ngx http fastcgi module)</a></li></ul></li><li><a href="/docs/nginx/02_nginxmo-kuai-guan-li/nginxchang-yong-mo-kuai-03.html" class="sidebar-link">Nginx常用模块三</a></li></ul></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>LNMP环境部署</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>Nginx优化管理</span> <span class="arrow right"></span></p> <!----></section></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>代码</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>收藏文章</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="nginx常用模块二"><a href="#nginx常用模块二" class="header-anchor">#</a> Nginx常用模块二</h1> <h2 id="_1、日志记录模块-ngx-http-log-module"><a href="#_1、日志记录模块-ngx-http-log-module" class="header-anchor">#</a> 1、日志记录模块（ngx_http_log_module）</h2> <p>以指定格式写入请求日志。</p> <ul><li>access_log</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> access_log path [format [buffer=size] [gzip[=level]] [flush=time] [if=condition]]</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">access_log</span> <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> access_log logs/access.log combined</span><span class="token punctuation">;</span>
+Context: http, server, location, if in location, limit_except
+</code></pre></div><p>设置日志写入的路径、格式和配置。例如:</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">access_log</span> /path/to/log.gz combined gzip flush=5m</span><span class="token punctuation">;</span>
+<span class="token comment"># 如果希望gzip正常工作, nginx必须构建zlib库</span>
+</code></pre></div><ul><li>log_format</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> log_format name [escape=default | json | none] string ...</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> log_format combined <span class="token string">&quot;...&quot;</span></span><span class="token punctuation">;</span>
+Context: http
+</code></pre></div><p>指定日志的格式。日志格式可以包含公共变量和仅在日志写入时存在的变量。</p> <p>配置：</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">log_format</span> compression <span class="token string">'<span class="token variable">$remote_addr</span> - <span class="token variable">$remote_user</span> [<span class="token variable">$time_local]</span>'</span>
+					 <span class="token string">'&quot;<span class="token variable">$request</span>&quot; <span class="token variable">$status</span> <span class="token variable">$bytes_sent</span>'</span>
+   					 <span class="token string">'&quot;<span class="token variable">$http_referer</span>&quot; &quot;<span class="token variable">$http_user_agent</span>&quot; 							 &quot;<span class="token variable">$gzip_ratio</span>&quot;'</span></span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">access_log</span> /spool/logs/nginx-access.log compression buffer=32k</span><span class="token punctuation">;</span>
+
+<span class="token comment">#json格式日志:</span>
+log_format json '<span class="token punctuation">{</span>&quot;@timestamp&quot;:&quot;$time_iso8601&quot;,'
+			   '&quot;client_ip&quot;:&quot;$remote_addr&quot;,'
+			   &quot;size&quot;:$body_bytes_sent,'
+			   '&quot;responsetime&quot;:$request_time,
+			   '&quot;upstreamtime&quot;: &quot;$upstream_response_time&quot;,'
+			   &quot;upstreamhost&quot;: &quot;$upstream_addr&quot;,'
+			   '&quot;http_host&quot;:&quot;$host&quot;,'
+			   '&quot;method&quot;: &quot;$request_method&quot;,'
+			   '&quot;request_uri&quot;: &quot;$request_uri&quot;,'
+			   '&quot;xff&quot;: &quot;$http_x_forwarded_for&quot;,'
+			   '&quot;referrer&quot;: &quot;$http_referer&quot;,'
+			   '&quot;agent&quot;: &quot;$http_user_agent&quot;,'
+			   '&quot;status&quot;:&quot;$status&quot;<span class="token punctuation">}</span>'<span class="token punctuation">;</span>
+</code></pre></div><ul><li>open_log_file_cache</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> open_log_file_cache max=N [inactive=time] [min_uses=N] [valid=time]</span><span class="token punctuation">;</span> 
+<span class="token directive"><span class="token keyword">open_log_file_cache</span> <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> open_log_file_cache <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+Context: http, server, location
+</code></pre></div><p>定义一个缓存，用于存储名称中包含变量的常用日志的文件描述符。缓存常用日志文件相关的元数据信息。(对于每一条日志记录，都将是先打开文件，再写入日志，然后关闭。)</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">open_log_file_cache</span> max=1000 inactive=20s valid=1m min_uses=2</span><span class="token punctuation">;</span>
+<span class="token comment"># max:缓存的最大文件描述符数量</span>
+<span class="token comment"># min_uses:在inactive定义的时间内，允许描述符在缓存中保持打开状态的最小文件使用数</span>
+<span class="token comment"># inactive:如果在此期间没有访问，则关闭缓存描述符的时间:</span>
+<span class="token comment"># valid:此时间超时后，会检查文件还是否具有相同的名字。验正缓存中各缓存项是否为活动项的时间间隔。</span>
+</code></pre></div><h2 id="_2、压缩相关配置-ngx-http-gzip-module"><a href="#_2、压缩相关配置-ngx-http-gzip-module" class="header-anchor">#</a> 2、压缩相关配置（ngx_http_gzip_module）</h2> <p>是一个使用&quot;gzip&quot;方法压缩响应的过滤器。这通常有助于将传输数据的大小减少一半甚至更多。</p> <ul><li>gzip</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> gzip <span class="token boolean">on</span> | <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> gzip <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+Context: http, server, location, if in location
+</code></pre></div><p>为响应开启或者取消gzip压缩</p> <ul><li>gzip_comp_level</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> gzip_comp_level level</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> gzip_comp_level <span class="token number">1</span></span><span class="token punctuation">;</span>
+Context: http, server, location
+</code></pre></div><p>设置响应压缩的gzip级别，范围1-9</p> <ul><li>gzip_buffers</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> gzip_buffers number size</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> gzip_buffers <span class="token number">32</span> <span class="token number">4k</span> | <span class="token number">16</span> <span class="token number">8k</span></span><span class="token punctuation">;</span>
+Context: http,server, location
+</code></pre></div><p>设置实现压缩功能时缓冲区数量及每个缓存区的大小。size默认大小等同于一个内存页, 4K或8K，取决于平台。</p> <ul><li>gzip_disable</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> gzip_disable regex ...</span><span class="token punctuation">;</span>
+Default: -
+Context: http, server, location
+</code></pre></div><p>取消对匹配到的客户端浏览器的响应报文的gzip压缩。</p> <ul><li>gzip_http_version</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">syntax:</span> gzip_http_version 1.0 | 1.1</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> gzip_http_version 1.1</span><span class="token punctuation">;</span>
+Context: http, server, location
+</code></pre></div><p>设置压缩响应时，所需的请求的最小HTTP版本。</p> <ul><li>gzip_min_length</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> gzip_min_length length</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> gzip_min_length <span class="token number">20</span></span><span class="token punctuation">;</span>
+Context: http, server, location
+</code></pre></div><p>设置将被gzip处理的响应的最小长度。长度仅从&quot;Content-Length&quot;响应头字段确定。</p> <ul><li>gzip_types</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> gzip_types mime-type ...</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> gzip_types text/html</span><span class="token punctuation">;</span>
+Context: http, server, location
+</code></pre></div><p>除了&quot;text/html&quot;之外，还允许对指定的mime类型进行gzip处理。 特殊值&quot;*&quot;匹配任何MIME类型(0.8.29) 带有”text/html&quot;类型的响应总是被压缩。</p> <ul><li>gzip_vary</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> gzip_vary <span class="token boolean">on</span> | <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> gzip_vary <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+Context: http, server, location
+</code></pre></div><p>如果gzip,gzip_ static或gunzip是活跃的，开启或关闭在响应头插入&quot;Vary:Accept-Encoding&quot;区域。(给代理服务器用的，有的浏览器支持压缩，有的不支持，所以避免浪费不支持的也压缩，所以根据客户端的HTTP头来判断，是否需要压缩)</p> <ul><li>gzip_proxied</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> gzip_proxied <span class="token boolean">off</span> | expired | no-cache | no-store | private | no_last_modified | no_etag | auth | any ...</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> gzip_proxied <span class="token boolean">off</span></span><span class="token punctuation">;</span> 
+Context: http, server , location
+</code></pre></div><p>依赖于请求和响应，开启对代理请求的gzip压缩。请求是被代理请求的确定是看请求头中是否出现&quot;Via&quot;区域。</p> <ul><li>内嵌变量$gzip_ratio</li></ul> <p>实现压缩比，计算为原始响应大小和压缩响应大小之间的比率，可以用于日志。</p> <ul><li>配置</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">gzip</span>		<span class="token boolean">on</span></span><span class="token punctuation">;</span> 
+<span class="token directive"><span class="token keyword">gzip_min_length</span> <span class="token number">1000</span></span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">gzip_proxied</span>	expired no-cache no-store private auth</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">gzip_types</span>		text/plain application/xml</span><span class="token punctuation">;</span>
+----------------------------------
+
+<span class="token directive"><span class="token keyword">gzip</span> on:
+
+gzip_comp_level <span class="token number">6</span></span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">gzip_http_version</span> 1.1</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">gzip_vary</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">gzip_min_length</span> <span class="token number">1024</span></span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">gzip_buffers</span> <span class="token number">16</span> <span class="token number">8k</span></span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">gzip_proxied</span> any</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">gzip_disable</span> <span class="token string">&quot;MSIE[1-6]\.(?!.*SVl)&quot;</span></span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">gzip_types</span> text/xml text/plain text/css application/javascript application/xml
+application/json</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="_3、http模块-ngx-http-ssl-module"><a href="#_3、http模块-ngx-http-ssl-module" class="header-anchor">#</a> 3、HTTP模块（ngx_http_ssl_module）</h2> <p>此模块提供对HTTPS的必要支持。模块默认没有安装，需要通过--with-http_ssl_ module配置参数激活。这个模块需要OpenSSL库支持。</p> <ul><li>ssl</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> ssl <span class="token boolean">on</span> | <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> ssl <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+Context: http, server
+</code></pre></div><p>该指令在1.15.0版中被废弃。应改为使用listen指令的ssl参数</p> <ul><li>ssl_certificate  ( [sərˈtɪfɪkət , sərˈtɪfɪkeɪt] )</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> ssl_certificate file</span><span class="token punctuation">;</span>
+Default: -
+Context: http, server
+</code></pre></div><p>为给定的虚拟服务器指定具有PEM格式证书的文件。如果除了主证书之外还应指定中间证书,则应按以下顺序在同一文件中指定证书；首先是主证书,然后是中间证书。PEM格式的密钥可以放在同一个文件中。
+从版本1.11.0开始，可以多次指定此指令以加载不同类型的证书,例如RSA和ECDSA：</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">listen</span>				<span class="token number">443</span> ssl</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">server_name</span>			example.com</span><span class="token punctuation">;</span>
+    
+	<span class="token directive"><span class="token keyword">ssl_certificate</span>		example.com.rsa.crt</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">ssl_certificate_key</span>	example.com.rsa.key</span><span class="token punctuation">;</span>
+    
+	<span class="token directive"><span class="token keyword">ssl_certificate</span>		example.com.ecdsa.crt</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">ssl_certificate_key</span> example.com.ecdsa.key</span><span class="token punctuation">;</span>
+    
+    ...
+<span class="token punctuation">}</span>
+</code></pre></div><p>只有OpenSSL 1.0.2或更高版本支持不同证书的单独证书链。对于旧版本，只能使用一个证书链。应该记住，由于HTTPS协议对最大互操作性的限制，虚拟服务器应该侦听不同的IP地址。</p> <ul><li>sll_certificate_key</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> ssl_certificate_key file</span><span class="token punctuation">;</span>
+Default: -
+Context: http, server
+</code></pre></div><p>明确为虚拟服务器指定一个含有加密key的PEM格式文件。即证书的私钥文件。</p> <ul><li>ssl_protocols</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> ssl_protocols [SSLv2] [SSLv3] [TLSv1] [TLSv1.1] [TLSv1.2] [TLSv1.3]</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> ssl_protocols TLSv1 TLSv1.1 TLSv1.2</span><span class="token punctuation">;</span>
+Context: http, server
+</code></pre></div><p>启用指定的协议。</p> <p>仅当使用OpenSSL 1.0.1或更高版本时，TLSv1.1和TLSv1.2参数(1.1.13， 1.0.12) 才起作用。只有在使用了用TLSv1.3支持构建的OpenSSL 1.1.1时, TLSv1.3参数(1.13.0) 才有效。</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># 查看openssl版本</span>
+$ <span class="token function">rpm</span> -qa <span class="token operator">|</span> <span class="token function">grep</span> openssl
+$ <span class="token function">rpm</span> -qi openssl
+</code></pre></div><ul><li>ssl_session_cache</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> ssl_session_cache <span class="token boolean">off</span> | none | [builtin[:size]] [shared:name:size]</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> ssl_session_cache none</span><span class="token punctuation">;</span>
+Context: http, server
+</code></pre></div><p>设置存储会话的缓存的类型和大小。缓存可以是以下任何类型:</p> <ul><li>off：严格禁止使用会话缓存：nginx显式地告诉客户机会话不能被重用。</li> <li>none：会话缓存的使用被悄悄地禁止：nginx告诉客户机会话可以重用，但实际上不会将会话参数存储在缓存中。</li> <li>builtin: 内置OpenSSL缓存；仅被一个工作进程使用。缓存大小是在会话中指定的。如果没有给出大小，则等于20480个会话。使用内置缓存可能会导致内存碎片。</li> <li>shared: 在所有工作进程之间共享的缓存。缓存大小以字节为单位； 1M字节可以存储大约4000个会话。每个共享缓存都应该有一个任意名称。具有相同名称的缓存可以在多个虚拟服务器中使用。</li></ul> <p>两种缓存类型都可以同时使用，但是，只使用没有builtin缓存的shared缓存应该更高效。例如:</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">ssl_session_cache</span> builtin:1000 shared:SSL:10m</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>ssl_session_timeout</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> ssl_session_timeout time</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> ssl_session_timeout <span class="token number">5m</span></span><span class="token punctuation">;</span>
+Context: http, server
+</code></pre></div><p>客户端可以重用会话参数的期限。</p> <ul><li>配置案例</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code>
+为了减少处理器负载，建议:
+1.将工作进程数设置为处理器数，
+2.启用keep-alive连接，
+3.启用共享session缓存，
+4.禁用内置session缓存，
+5.并可能延长会话生存时间(默认为5分钟)
+&quot;&quot;&quot;
+
+<span class="token directive"><span class="token keyword">worker_processes</span> auto</span><span class="token punctuation">;</span>
+
+<span class="token directive"><span class="token keyword">http</span></span> <span class="token punctuation">{</span>
+	...
+	<span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">listen</span>			<span class="token number">443</span> ssl</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">keepalive_timeout</span>		<span class="token number">70</span></span><span class="token punctuation">;</span>
+        
+	<span class="token directive"><span class="token keyword">ssl_protocols</span>		TLSv1 TLSv1.1 TLSv1.2</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">ssl_ciphers</span>			AES128-SHA:AES256-SHA:RC4-SHA:DES-CBC3-SHA:RC4-MD5</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">ssl_certificate</span>		/usr/1ocal/nginx/conf/cert.pem</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">ssl_certificate_key</span> /usr/1ocal/nginx/conf/cert.key</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">ssl_session_cache</span>	shared:SSL:10m</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">ssl_session_timeout</span> <span class="token number">10m</span></span><span class="token punctuation">;</span>
+	
+    ...
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="_4、反向代理模块-ngx-http-proxy-module"><a href="#_4、反向代理模块-ngx-http-proxy-module" class="header-anchor">#</a> 4、反向代理模块(ngx_http_ proxy_ module)</h2> <p>此模块允许将请求传递到其它的服务器。</p> <ul><li>proxy_pass</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> proxy_pass URL</span><span class="token punctuation">;</span>
+Default: -
+Context: location,	if in location, limit_except
+</code></pre></div><p>设置一个被代理服务器的协议和地址以及选项URI，将其映射到一个location。协议可以指定&quot;http&quot;或&quot;https&quot;。地址可以指定为域名或IP地址，以及可选端口:</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">proxy_pass</span> http://localhost:8000/uri/</span><span class="token punctuation">;</span>
+</code></pre></div><p>指定UNIX socket路径时,路径应放到关键字:unix后面，并用冒号括起来。</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">proxy_pass</span> unix:/tmp/backend.socket:/uri/</span><span class="token punctuation">;</span>
+</code></pre></div><p>如果域名解析为多个地址，则所有地址将以轮询(round-robin) 方式使用。此外,可以将地址指定为服务器组。</p> <p>参数值不能包含变量。在这种情况下，如果将地址指定为域名，则会在所描述的服务器组中搜索该名称,如果找不到，则使用解析程序确定该名称。</p> <p>请求URl按如下方式传递到服务器:</p> <ul><li>如果proxy_ pass指定了URI，那么标准请求URI中匹配了location的部分要被指令中指定的URl替代。</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">location</span> /name/</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">proxy_pass</span> http://127.0.0.1/remote/</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>如果proxy_pass没有指定URI，当原始请求被处理时，请求URI将以客户端发送的相同形式传递给服务器;或者当处理改变的URI时，传递完全规范化的URI。(1.1.12之前，只传递原始的URI)</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">location</span> /some/path/</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">proxy_pass</span> http://127.0.0.1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>在某些情况下，无法确定要替换的请求URI部分:</p> <p>当使用正则表达式指定location时，并也在命名location内，proxy_pass应该做没有URI的指定。
+当location中使用rewrite指令更改URI时，将使用相同的配置来处理请求(break)：</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">location</span> /name/</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">rewrite</span> /name/([^/]+) /users?name=<span class="token variable">$l</span> break</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">proxy_pass</span> http://127.0.0.1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment"># 在这种情况下，将忽略指令中指定的URI,并将完全更改的请求URI传递给服务器。</span>
+</code></pre></div><ul><li>当proxy_pass中使用了变量时如果在指令中指定了URI,则其会传递给服务器，原始请求URI被其替换。</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">location</span> /name/</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">proxy_pass</span> http://127.0.0.1<span class="token variable">$request_uri</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="_5、php相关模块-ngx-http-fastcgi-module"><a href="#_5、php相关模块-ngx-http-fastcgi-module" class="header-anchor">#</a> 5、php相关模块(ngx_ http_ fastcgi module)</h2> <p>这个模块允许传递一个请求给FastCGI Server。</p> <h3 id="基本相关知识"><a href="#基本相关知识" class="header-anchor">#</a> 基本相关知识</h3> <h4 id="_1-什么是fastcgl"><a href="#_1-什么是fastcgl" class="header-anchor">#</a> 1.什么是FastCGl</h4> <p>FastCGl是一个可伸缩地、高速地在HTTP server和动态脚本语言间通信的接口。多数流行的HTTP server都支持FastCGI,包括Apache、 Nginx和lighttpd等。 同时, FastCGI也被许多脚本语言支持，其中就有PHP。</p> <p>FastCGI接口方式采用C/S结构，可以将HTTP服务器和脚本解析服务器分开,同时在脚本解析服务器上启动一个或者多个脚本解析守护进程。当HTTP服务器每次遇到动态程序时， 可以将其直接交付给FastCGl进程来执行，然后将得到的结果返回给浏览器。这种方式可以让HTTP服务器专一地处理静态请求或者将动态脚本服务器的结果返回给客户端，这在很大程度上提高了整个应用系统的性能。</p> <h4 id="_2-nginx-fastcgl运行原理"><a href="#_2-nginx-fastcgl运行原理" class="header-anchor">#</a> 2.Nginx+FastCGl运行原理</h4> <p>Nginx不支持对外部程序的直接调用或者解析，所有的外部程序(包括PHP)必须通过FastCG接口来调用。FastCGI接口在Linux 下是socket (这个socket可以是文件socket, 也可以是ip socket)。为了调用CGl程序,还需要一个FastCGl的 wrapper (wrapper可以理解为用于启动另一个程序的程序) ，这个wrapper绑定在某个固定socket上,如端口或者文件socket。当Nginx将CGI请求发送给这个socket的时候，通过FastCGI接口, wrapper接收到请求，然后派生出一个新的线程,这个线程调用解释器或者外部程序处理脚本并读取返回数据;接着，wrapper再将返回的数据通过FastCGl接口，沿着固定的socket传递给Nginx;最后, Nginx将返回的数据发送给客户端。这就是Nginx+FastCGl的整个运作过程。</p> <p><img src="https://pic-onemue-cn.oss-cn-beijing.aliyuncs.com/docs/onemue1647249892Fq4h9c.png" alt="11"></p> <h4 id="_3-spawn-fcgi与php-fpm"><a href="#_3-spawn-fcgi与php-fpm" class="header-anchor">#</a> 3. spawn-fcgi与PHP-FPM</h4> <p>FastCGI接口方式在脚本解析服务器上启动一个或者多个守护进程对动态脚本进行解析，这些进程就是FastCGI进程管理器，或者称为FastCGI引擎。 spawn-fcgj与PHP-FPM就是支持PHP的两个FastCGl进程管理器。</p> <p>spawn-fcgi是HTTP服务器lighttpd的一部分，目前已经独立成为一个项目,一般与lighttpd配合使用来支持PHP。但是lighttpd的spwan-fcgi在高并发访问的时候，会出现内存泄漏甚至自动重启FastCG的问题。Nginx是个轻量级的HTTP server,必须借助第三方的FastCG处理器才可以对PHP进行解析,因此Nginx+spawn-fcgi的组合也可以实现对PHP的解析。</p> <p>PHP-FPM也是一个第三方的FastCGI进程管理器，它是作为PHP的一个补丁来开发的，在安装的时候也
+需要和PHP源码一起编译，也就是说PHP-FPM被编译到PHP内核中，因此在处理性能方面更加优秀。同
+时PHP-FPM在处理高并发方面也比spawn-fcgi引擎好很多，因此,推荐使用Nginx+PHP/PHP-FPM这个
+组合对PHP进行解析。</p> <p>FastCGl的主要优点是把动态语言和HTTP Server分离开来，所以Nginx与PHP/PHP-FPM经常被部署在
+不同的服务器上，以分担前端Nginx服务器的压力,使Nginx专一处理静态请求和转发动态请求, 而PHP/PHP- FPM服务器专一解析PHP动态请求。</p> <ul><li>fastcgi_pass</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> fastcgi_pass address</span><span class="token punctuation">;</span>
+Default: -
+Context: location, if in location
+</code></pre></div><p>设置FastCGI server的地址，地址可以是IP或者域名加上端口号。</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">fastcgi_pass</span> localhost: <span class="token number">9000</span></span><span class="token punctuation">;</span>
+
+<span class="token comment">#也可以是UNIX socket路径</span>
+<span class="token directive"><span class="token keyword">fastcgi_pass</span> unix:/tmp/fastcgi.socket</span><span class="token punctuation">;</span>
+</code></pre></div><p>如果域名解析为多个地址，则所有地址都将以循环方式使用。此外,可以将地址指定为服务器组。参数值不能包含变量。</p> <ul><li>fastcgi_index</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> fastcgi_index name</span><span class="token punctuation">;</span>
+Default: -
+Context: http, server, location
+</code></pre></div><p>设置fastcgi默认的主页资源文件名</p> <ul><li>fastcgi_param</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> fastcgi_param parameter value [if_not_empty]</span> <span class="token punctuation">;</span>
+Default: -
+Context: http, server, location
+</code></pre></div><p>设置应传递给FastCGI服务器的参数。该值可以包含文本、变量及其组合。如果当前级别没有定义,会从上一级继承。</p> <p>对于PHP来说的最小化配置:</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">fastcgi_param</span> SCRIPT_FILENAME /home/www/scripts/php<span class="token variable">$fastcgi_script_name</span></span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">fastcgi_param</span> QUERY_STRING		<span class="token variable">$query_string</span></span><span class="token punctuation">;</span>
+</code></pre></div><p>SCRIPT_ FILENAME参数用于PHP确定请求脚本的名字
+QUERY_ STRING参数用于传递请求的参数</p> <p>对于处理POST请求的脚本，还需要以下三个参数:</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">fastcgi_param</span> REQUEST METHOD 	<span class="token variable">$request_method</span></span><span class="token punctuation">;</span> <span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">fastcgi_param</span> CONTENT_TYPE	<span class="token variable">$content_type</span></span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">fastcgi_param</span> CONTENT_LENGTH	<span class="token variable">$content_length</span></span><span class="token punctuation">;</span>
+</code></pre></div><p>如果PHP编译时使用了--enable-force-cgi-redirect配置参数，则REDIRECT, _STATUS参数应该使用200值被传递</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">fastcgi_param</span> REDIRECT_STATUS <span class="token number">200</span></span><span class="token punctuation">;</span> 
+</code></pre></div><ul><li>fastcgi_cache_path</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> fastcgi_cache_path path [levels=levels] [use_temp_path=on|off] 
+keys_zone=name:size [inactive=time]
+		[max_size=size] [manager_files=number] [manager_sleep=time]
+[manager_threshold=time] [loader_fi1es=number]
+		[1oader_sleep=time] [loader_threshold=time] [purger=on|off]
+[purger_files=number] [purger_sleep=time]
+		[purger_thresho1d=time]</span> <span class="token punctuation">;</span>
+Default: -
+Context: http
+</code></pre></div><p>设置缓存的路径和其他参数。缓存数据存储在文件中。levels的目录层级为1到3级,每级的取值为1或者2；levels=1:2表示定义的2层目录结构，levels=1:2:2表示定义的3层目录结构。</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">fastcgi_cache_path</span> /data/nginx/cache levels=1:2 keys_zone=one:10m</span><span class="token punctuation">;</span>
+</code></pre></div><p>缓存的文件名看起来如下:</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code>/data/nginx/cache/c/29/b7f54b2df7773722d382f4809d65029c
+</code></pre></div><p>一个缓存响应首先写入到临时文件，然后再重命名此文件，临时文件目录是否使用由use_temp_path参数定义的，如果这个参数省略或者设置为on，则临时文件目录为fastcgi_temp_path参数指定的位置，如果设置为off，则临时文件将直接放在缓存目录中。此外，所有活动key和有关数据的信息都存储在共享内存区域中，其名称和大小由keys_zone参数配置。1M字节的区域可以存储大约8000个key。</p> <p>inactive参数指定时间内没有被访问的缓存数据将被清除，其默认值为10分钟；</p> <p>max_size参数设置最大缓存大小，如果超出，缓存管理器将删除最近最少被使用的数据</p> <ul><li>fastcgi_cache</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> fastcgi_cache zone | <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> fastcgi_cache <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+Context: http, server, location
+</code></pre></div><p>定义用于缓存的一个共享内存区域，同一个区域可以被用于多个位置；off取消缓存继承</p> <ul><li>fastcgi_cache_key</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> fastcgi_cache_key string</span><span class="token punctuation">;</span>
+Default: -
+Context: http, server, location
+</code></pre></div><p>定义一个缓存的key，例如:</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">fastcgi_cache_key</span> localhost:9000<span class="token variable">$request_uri</span></span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>fastcgi_cache_methods</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> fastcgi_cache_methods GETI HEAD | POST ...</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> fastcgi_cache_methods GET HEAD</span><span class="token punctuation">;</span>
+Context: http, server, location
+</code></pre></div><p>定义缓存的客户端的请求方法，&quot;GET&quot;和&quot;HEAD&quot;方法总是被缓存，建议显式列出。</p> <ul><li>fastcgi_cache_min_uses</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> fastcgi_cache_min_uses number</span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> fastcgi_cache_min_uses <span class="token number">1</span></span><span class="token punctuation">;</span>
+Context: http, server, location
+</code></pre></div><p>定义响应被缓存后的最小访问次数</p> <ul><li>fastcgi_keep_conn</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> fastcgi_keep_conn <span class="token boolean">on</span> | <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">Default:</span> fastcgi_keep_conn <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+Context: http, server, location
+</code></pre></div><p>默认情况下，fastcgj服务器将在发送响应后立即关闭连接。当该指令设置为on时，nginx将指示fastcgi服务器保持连接打开建议开启。</p> <ul><li>fastcgi_cache_valid</li></ul> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">Syntax:</span> fastcgi_cache_valid [code ...] time</span><span class="token punctuation">;</span>
+Default: -
+Context: http, server, location
+</code></pre></div><p>设置不同的响应码的缓存时间。例如:</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">fastcgi_cache_valid</span> <span class="token number">200</span> <span class="token number">302</span> <span class="token number">10m</span></span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">fastcgi_cache_valid</span> <span class="token number">404</span>	<span class="token number">1m</span></span><span class="token punctuation">;</span>
+</code></pre></div><p>响应码为200和302的缓存时间为10分钟；404 响应码缓存时间为1分钟</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">fastcgi_cache_valid</span> <span class="token number">5m</span></span><span class="token punctuation">;</span>
+</code></pre></div><p>如果仅设置时间，则只有200, 301, 302响应码被缓存</p> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">fastcgi_cache_valid</span> <span class="token number">200</span> <span class="token number">302</span> <span class="token number">10m</span></span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">fastcgi_cache_valid</span> <span class="token number">301</span> <span class="token number">1h</span></span><span class="token punctuation">;</span>
+<span class="token directive"><span class="token keyword">fastcgi_cache_valid</span> any <span class="token number">1m</span></span><span class="token punctuation">;</span>
+</code></pre></div><p>还可以指定any参数来缓存任何响应</p> <p>缓存参数也可以直接在响应头中设置。这比使用指令设置缓存时间具有更高的优先级。例如:如果头包含&quot;Set-Cookie&quot;字段，则不会缓存此类响应。</p> <h4 id="_4-设置fastcgl"><a href="#_4-设置fastcgl" class="header-anchor">#</a> 4. 设置FastCGl</h4> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">{</span>
+	<span class="token directive"><span class="token keyword">fastcgi_pass</span> localhost :9000</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">fastcgi_index</span> index.php</span><span class="token punctuation">;</span>
+    
+	<span class="token directive"><span class="token keyword">fastcgi_param</span> SCRIPT_FILENAME /home/www/scripts/phpsfastcgi_script_name</span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">fastcgi_param</span> QUERY_STRING	<span class="token variable">$query_string</span></span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">fastcgi_param</span> REQUEST METHOD <span class="token variable">$request_method</span></span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">fastcgi_param</span> CONTENT TYPE	<span class="token variable">$content_type</span></span><span class="token punctuation">;</span>
+	<span class="token directive"><span class="token keyword">fastcgi_param</span> CONTENT_LENGTH <span class="token variable">$content_length</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="_5-设置缓存的例子"><a href="#_5-设置缓存的例子" class="header-anchor">#</a> 5. 设置缓存的例子</h4> <div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">http</span></span> <span class="token punctuation">{</span>
+<span class="token directive"><span class="token keyword">fastcgi_cache_path</span> /var/cache/nginx/fcgi_cache
+levels=1:2:1 keys_zone=fcgicache:20m inactive=120s</span> <span class="token punctuation">;</span>
+...
+<span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+    <span class="token directive"><span class="token keyword">location</span> ~* \. php$</span> <span class="token punctuation">{</span>
+        ...
+        <span class="token directive"><span class="token keyword">fastcgi_cache</span> fcgicache</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">fastcgi_cache_key</span> <span class="token variable">$request_uri</span></span> <span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">fastcgi_cache_valid</span> <span class="token number">200</span> <span class="token number">302</span> <span class="token number">10m</span></span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">fastcgi_cache_valid</span> <span class="token number">301</span> lh</span><span class="token punctuation">;</span>
+        <span class="token directive"><span class="token keyword">fastcgi_cache_valid</span> any lm</span><span class="token punctuation">;</span>
+...
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docs/nginx/02_nginxmo-kuai-guan-li/nginxchang-yong-mo-kuai-01.html" class="prev">
+        Nginx常用模块一
+      </a></span> <span class="next"><a href="/docs/nginx/02_nginxmo-kuai-guan-li/nginxchang-yong-mo-kuai-03.html">
+        Nginx常用模块三
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/docs/assets/js/app.27b283a1.js" defer></script><script src="/docs/assets/js/2.2e8f894a.js" defer></script><script src="/docs/assets/js/12.76af45bb.js" defer></script>
+  </body>
+</html>
